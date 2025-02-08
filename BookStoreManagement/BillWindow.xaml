@@ -1,0 +1,34 @@
+﻿<Window x:Class="BookStoreManagement.BillWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookStoreManagement"
+        mc:Ignorable="d"
+        Title="BillWindow" Height="460" Width="365" ResizeMode="NoResize">
+
+    <Grid Background="White">
+
+        <TextBlock x:Name="invoice" HorizontalAlignment="Left" Margin="262,22,0,0" TextWrapping="Wrap" Text="INVOICE" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="87"/>
+        <TextBlock x:Name="company_Name" HorizontalAlignment="Left" Margin="23,22,0,0" TextWrapping="Wrap" Text="ATLAS Book Store" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <TextBlock x:Name="date" Height="20" Margin="0,59,110,0" TextWrapping="Wrap" Text="Date" VerticalAlignment="Top" Width="23" FontSize="10" HorizontalAlignment="Right"/>
+        <TextBlock x:Name="date_txt" HorizontalAlignment="Left" Height="20" Margin="262,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" FontSize="10" TextAlignment="Right" Text="XX-XXX-XXXX"/>
+        <TextBlock x:Name="customer_ID" Height="20" Margin="0,79,110,0" TextWrapping="Wrap" Text="Customer ID" VerticalAlignment="Top" Width="57" FontSize="10" HorizontalAlignment="Right"/>
+        <TextBlock x:Name="customer_ID_txt" HorizontalAlignment="Left" Height="19" Margin="262,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" FontSize="10" TextAlignment="Right" Text="CXXXXXX"/>
+        <TextBlock x:Name="bill_No" Height="20" Margin="0,97,110,0" TextWrapping="Wrap" Text="Bill No" VerticalAlignment="Top" Width="32" FontSize="10" HorizontalAlignment="Right"/>
+        <TextBlock x:Name="bill_No_txt" HorizontalAlignment="Left" Height="19" Margin="262,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" FontSize="10" TextAlignment="Right" Text="B-XX-XXX"/>
+        <Line X1="30" Y1="135" X2="340" Y2="135" Stroke="Black" StrokeThickness="1" />
+        <TextBlock x:Name="ordered_List" Height="20" Margin="0,151,228,0" TextWrapping="Wrap" Text="Ordered List" VerticalAlignment="Top" Width="72" FontSize="10" HorizontalAlignment="Right" FontWeight="Bold"/>
+        <TextBlock x:Name="quantity" Height="28" Margin="0,145,95,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" FontSize="10" HorizontalAlignment="Right" TextAlignment="Center" FontWeight="Bold"><Run Text="Qty."/><LineBreak/><Run Text="(Ea)"/></TextBlock>
+        <TextBlock x:Name="total_Price" Height="28" Margin="0,145,20,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" FontSize="10" HorizontalAlignment="Right" FontStretch="SemiCondensed" TextAlignment="Center" FontWeight="Bold"><Run Text="Total Price "/><LineBreak/><Run Text="(THB)"/></TextBlock>
+        <Line X1="30" Y1="385" X2="340" Y2="385" Stroke="Black" StrokeThickness="1" />
+
+        <StackPanel x:Name="transactionStackPanel" Orientation="Vertical" Margin="30,185,40,58" />
+
+        <Line X1="30" Y1="180" X2="340" Y2="180" Stroke="Black" StrokeThickness="1" />
+        <TextBlock x:Name="grand_Total" Height="20" Margin="0,395,120,0" TextWrapping="Wrap" Text="Grand Total" VerticalAlignment="Top" Width="57" FontSize="10" HorizontalAlignment="Right" FontWeight="Bold" TextDecorations="Underline"/>
+        <TextBlock x:Name="grand_Total_decimal" HorizontalAlignment="Left" Height="20" Margin="244,396,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" FontSize="10" Text="XXXX" TextAlignment="Right"/>
+        <TextBlock x:Name="THB" HorizontalAlignment="Left" Height="19" Margin="316,396,0,0" TextWrapping="Wrap" Text="THB" VerticalAlignment="Top" Width="33" FontSize="10" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

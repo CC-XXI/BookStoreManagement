@@ -1,0 +1,53 @@
+﻿<Window x:Class="BookStoreManagement.ManageTransactionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookStoreManagement"
+        mc:Ignorable="d"
+        Title="ManageTransactionWindow" Height="600" Width="850" ResizeMode="NoResize">
+
+    <Grid Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}">
+
+        <TextBlock HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" Text="Transaction Menu" Margin="34,30,714,534"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="98" VerticalAlignment="Top" Width="786" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" Margin="0,54,0,0"/>
+        <TextBlock x:Name="customer_ID" HorizontalAlignment="Left" Height="25" Margin="63,72,0,0" TextWrapping="Wrap" Text="Customer ID" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="customer_ID_txt" HorizontalAlignment="Left" Height="25" Margin="169,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="465"/>
+        <TextBlock x:Name="bill_No" HorizontalAlignment="Left" Height="25" Margin="63,109,0,0" TextWrapping="Wrap" Text="Bill No." VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="bill_No_txt" HorizontalAlignment="Left" Height="25" Margin="169,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="465" />
+        <Button x:Name="check_Out" Content="Check Out" HorizontalAlignment="Left" Height="31" Margin="679,67,0,0" VerticalAlignment="Top" Width="110" Click="check_Out_Click"/>
+        <Button x:Name="search" Content="Search" HorizontalAlignment="Left" Height="31" Margin="679,105,0,0" VerticalAlignment="Top" Width="110" Click="search_Click"/>
+
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="163" Margin="0,165,0,0" VerticalAlignment="Top" Width="786" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+        <TextBlock x:Name="ISBN" HorizontalAlignment="Left" Height="25" Margin="63,186,0,0" TextWrapping="Wrap" Text="ISBN" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="ISBN_txt" HorizontalAlignment="Left" Height="25" Margin="169,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="465" TextChanged="ISBN_txt_TextChanged"/>
+        <TextBlock x:Name="book_Title" HorizontalAlignment="Left" Height="25" Margin="63,218,0,0" TextWrapping="Wrap" Text="Book Title" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="book_Title_txt" HorizontalAlignment="Left" Height="25" Margin="169,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="465"/>
+        <TextBlock x:Name="price" HorizontalAlignment="Left" Height="25" Margin="63,251,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="price_decimal" HorizontalAlignment="Left" Height="25" Margin="169,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="422"/>
+        <TextBlock x:Name="currency" HorizontalAlignment="Left" Height="25" Margin="605,254,0,0" TextWrapping="Wrap" Text="THB" VerticalAlignment="Top" Width="29"/>
+        <TextBlock x:Name="quantity" HorizontalAlignment="Left" Height="25" Margin="63,283,0,0" TextWrapping="Wrap" Text="Qty" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="quantity_int" HorizontalAlignment="Left" Height="25" Margin="169,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="422"/>
+        <TextBlock x:Name="Ea" HorizontalAlignment="Left" Height="26" Margin="605,283,0,0" TextWrapping="Wrap" Text="Ea" VerticalAlignment="Top" Width="29"/>
+        <Button x:Name="add" Content="Add" HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="110" Margin="679,188,0,0" Click="add_Click"/>
+        <Button x:Name="delete" Content="Delete" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="110" Margin="679,227,0,0" Click="delete_Click"/>
+        <Button x:Name="back" Content="Back" HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="110" Margin="679,270,0,0" Click="back_Click"/>
+
+
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="33,333,0,0" TextWrapping="Wrap" Text="Ordered Book" VerticalAlignment="Top" Width="90"/>
+        <ListView x:Name="orderedBookDataListView" Margin="32,352,32,19" SelectionChanged="orderedBookDataListView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Bill No." DisplayMemberBinding="{Binding Bill_No}" Width="80"/>
+                    <GridViewColumn Header="Customer ID" DisplayMemberBinding="{Binding Customer_Id}" Width="100"/>
+                    <GridViewColumn Header="ISBN" DisplayMemberBinding="{Binding ISBN}" Width="130"/>
+                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" Width="200"/>
+                    <GridViewColumn Header="Quantity (Ea)" DisplayMemberBinding="{Binding Quantity}" Width="100"/>
+                    <GridViewColumn Header="Total Price (THB)" DisplayMemberBinding="{Binding Total_Price}" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+    </Grid>
+</Window>

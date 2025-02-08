@@ -1,0 +1,22 @@
+﻿<Window x:Class="BookStoreManagement.ControlWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookStoreManagement"
+        mc:Ignorable="d"
+        Title="ControlWindow" Height="450" Width="850">
+
+    <Grid Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}">
+
+        <Button x:Name="book_Manage" Content="Book" HorizontalAlignment="Left" Height="38" Margin="87,101,0,0" VerticalAlignment="Top" Width="139" Click="book_Manage_Click"/>
+        <Button x:Name="customer_Manage" Content="Customer" HorizontalAlignment="Left" Height="38" Margin="87,165,0,0" VerticalAlignment="Top" Width="139" Click="customer_Manage_Click"/>
+        <Button x:Name="transaction_Manage" Content="Transaction" HorizontalAlignment="Left" Height="38" Margin="87,233,0,0" VerticalAlignment="Top" Width="139" Click="transaction_Manage_Click"/>
+        <TextBlock x:Name="Description_01" HorizontalAlignment="Left" Height="20" Margin="256,110,0,0" TextWrapping="Wrap" Text="Add, Update, Delete or Search Books information in the store " VerticalAlignment="Top" Width="364"/>
+        <TextBlock x:Name="Description_02" HorizontalAlignment="Left" Height="20" Margin="256,175,0,0" TextWrapping="Wrap" Text="Add, Update, Delete or Search Customer information" VerticalAlignment="Top" Width="364"/>
+        <TextBlock x:Name="Description_03" HorizontalAlignment="Left" Height="20" Margin="256,243,0,0" TextWrapping="Wrap" Text="Update Book purchasing transaction" VerticalAlignment="Top" Width="364"/>
+        <Button x:Name="Log_Out" Content="Log Out" HorizontalAlignment="Left" Height="37" Margin="87,302,0,0" VerticalAlignment="Top" Width="139" Click="Log_Out_Click"/>
+
+    </Grid>
+
+</Window>

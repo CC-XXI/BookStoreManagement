@@ -1,0 +1,51 @@
+﻿<Window x:Class="BookStoreManagement.ManageCustomerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookStoreManagement"
+        mc:Ignorable="d"
+        Title="ManageCustomerWindow" Height="600" Width="850" ResizeMode="NoResize">
+
+
+    <Grid x:Name="Add" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="34,33,0,0" TextWrapping="Wrap" Text="Customer Menu" VerticalAlignment="Top" Width="90"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="258" Margin="0,52,0,0" VerticalAlignment="Top" Width="786" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+
+        <TextBlock x:Name="customer_ID" HorizontalAlignment="Left" Height="25" Margin="75,71,0,0" TextWrapping="Wrap" Text="Customer ID" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="customer_ID_txt" HorizontalAlignment="Left" Height="25" Margin="181,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="479"/>
+        <TextBlock x:Name="first_Name" HorizontalAlignment="Left" Height="25" Margin="76,101,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="first_Name_txt" HorizontalAlignment="Left" Height="25" Margin="181,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="479"/>
+        <TextBlock x:Name="last_Name" HorizontalAlignment="Left" Height="25" Margin="76,132,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="last_Name_txt" HorizontalAlignment="Left" Height="25" Margin="181,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="479"/>
+        <TextBlock x:Name="adress" HorizontalAlignment="Left" Height="25" Margin="75,167,0,0" TextWrapping="Wrap" Text="Adress" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="adresss_txt" HorizontalAlignment="Left" Height="99" Margin="181,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="479"/>
+        <TextBlock x:Name="email" HorizontalAlignment="Left" Height="25" Margin="75,273,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="email_txt" HorizontalAlignment="Left" Height="25" Margin="181,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="479"/>
+        <Button x:Name="add" Content="Add" HorizontalAlignment="Left" Height="31" Margin="690,68,0,0" VerticalAlignment="Top" Width="110" Click="add_Click"/>
+        <Button x:Name="delete" Content="Delete" HorizontalAlignment="Left" Height="30" Margin="690,116,0,0" VerticalAlignment="Top" Width="110" Click="delete_Click"/>
+        <Button x:Name="search" Content="Search" HorizontalAlignment="Left" Height="31" Margin="690,214,0,0" VerticalAlignment="Top" Width="110" Click="search_Click"/>
+        <Button x:Name="update" Content="Update" HorizontalAlignment="Left" Height="32" Margin="690,166,0,0" VerticalAlignment="Top" Width="110" Click="update_Click"/>
+        <Button x:Name="back" Content="Back" HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="110" Margin="690,265,0,0" Click="back_Click"/>
+
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="33,322,0,0" TextWrapping="Wrap" Text="Book Database" VerticalAlignment="Top" Width="90"/>
+        <ListView x:Name="CustomersListView" Margin="32,341,32,14" SelectionChanged="CustomersListView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Customer ID" DisplayMemberBinding="{Binding Customer_Id}" Width="120"/>
+                    <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding Customer_FirstName}" Width="120"/>
+                    <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding Customer_LastName}" Width="120"/>
+                    <GridViewColumn Header="Adress" DisplayMemberBinding="{Binding Address}" Width="295"/>
+                    <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="120"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+
+
+    </Grid>
+
+</Window>

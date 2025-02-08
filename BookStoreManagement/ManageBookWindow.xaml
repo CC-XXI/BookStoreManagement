@@ -1,0 +1,45 @@
+﻿<Window x:Class="BookStoreManagement.ManageBookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookStoreManagement"
+        mc:Ignorable="d"
+        Title="ManageBookWindow" Height="600" Width="850" ResizeMode="NoResize">
+
+    <Grid x:Name="Add" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="34,33,0,0" TextWrapping="Wrap" Text="Book Menu" VerticalAlignment="Top" Width="90"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="258" Margin="0,52,0,0" VerticalAlignment="Top" Width="786" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+
+        <TextBlock x:Name="ISBN" HorizontalAlignment="Left" Height="25" Margin="75,71,0,0" TextWrapping="Wrap" Text="ISBN" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="ISBN_txt" HorizontalAlignment="Left" Height="25" Margin="181,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="479"/>
+        <TextBlock x:Name="book_Title" HorizontalAlignment="Left" Height="25" Margin="75,102,0,0" TextWrapping="Wrap" Text="Book Title" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="book_Title_txt" HorizontalAlignment="Left" Height="25" Margin="181,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="479"/>
+        <TextBlock x:Name="book_Description" HorizontalAlignment="Left" Height="25" Margin="75,134,0,0" TextWrapping="Wrap" Text="Book Description" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="book_Description_txt" HorizontalAlignment="Left" Height="133" Margin="181,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="479"/>
+        <TextBlock x:Name="price" HorizontalAlignment="Left" Height="25" Margin="75,273,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="book_Price_decimal" HorizontalAlignment="Left" Height="25" Margin="181,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="438"/>
+        <Button x:Name="add" Content="Add" HorizontalAlignment="Left" Height="31" Margin="690,68,0,0" VerticalAlignment="Top" Width="110" Click="add_Click"/>
+        <Button x:Name="delete" Content="Delete" HorizontalAlignment="Left" Height="30" Margin="690,116,0,0" VerticalAlignment="Top" Width="110" Click="delete_Click"/>
+        <Button x:Name="search" Content="Search" HorizontalAlignment="Left" Height="31" Margin="690,214,0,0" VerticalAlignment="Top" Width="110" Click="search_Click"/>
+        <Button x:Name="update" Content="Update" HorizontalAlignment="Left" Height="32" Margin="690,166,0,0" VerticalAlignment="Top" Width="110" Click="update_Click"/>
+        <TextBlock x:Name="currency" HorizontalAlignment="Left" Height="25" Margin="638,274,0,0" TextWrapping="Wrap" Text="THB" VerticalAlignment="Top" Width="29"/>
+        <Button x:Name="back" Content="Back" HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="110" Margin="690,265,0,0" Click="back_Click"/>
+
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="33,322,0,0" TextWrapping="Wrap" Text="Book Database" VerticalAlignment="Top" Width="90"/>
+        <ListView x:Name="BooksListView" Margin="32,341,32,14" SelectionChanged="BooksListView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ISBN" DisplayMemberBinding="{Binding ISBN}" Width="120"/>
+                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" Width="250"/>
+                    <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}" Width="310"/>
+                    <GridViewColumn Header="Price (THB)" DisplayMemberBinding="{Binding Price}" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+
+</Window>
